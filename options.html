@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インターネット監視員 - 設定</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>インターネット監視員</h1>
+            <p class="subtitle">サイトへのアクセスを制限して生産性を向上</p>
+        </header>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>ブロックするドメインを追加</h2>
+                <p>例: youtube.com, twitter.com, facebook.com など</p>
+            </div>
+            <div class="card-content">
+                <div class="input-group">
+                    <input type="text" id="newDomain" class="input-field" placeholder="ドメインを入力してください">
+                    <button id="addDomain" class="btn-primary">
+                        <span class="material-icons">add</span>
+                        追加
+                    </button>
+                </div>
+                <div class="info-box">
+                    <span class="material-icons info-icon">info</span>
+                    <p>正確なドメイン（例: example.com）を入力すると、そのドメインとサブドメイン（sub.example.com）が制限されます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card domain-list-card">
+            <div class="card-header">
+                <h2>現在のブロックリスト</h2>
+            </div>
+            <div class="card-content">
+                <div id="emptyMessage" class="empty-message">
+                    <span class="material-icons">block</span>
+                    <p>ブロックされたドメインはありません</p>
+                </div>
+                <ul id="domainList" class="domain-list"></ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>使い方</h2>
+            </div>
+            <div class="card-content">
+                <ol class="instructions">
+                    <li>上のフォームからブロックしたいWebサイトのドメインを追加します。</li>
+                    <li>そのサイトにアクセスすると、制限画面が表示されます。</li>
+                    <li>一時的にアクセスする場合は、画面の指示に従って許可時間を選び、指定された文を入力します。</li>
+                    <li>許可時間が経過すると、再び制限がかかります。</li>
+                </ol>
+            </div>
+        </div>
+
+        <footer>
+            <p>インターネット監視員 v1.1</p>
+        </footer>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>
