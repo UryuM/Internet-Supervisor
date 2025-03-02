@@ -158,7 +158,7 @@
       buttonContainer.appendChild(btn);
     });
   
-    const textToCopy = "私は本当にこのサイトを必要な時間だけ利用します。";
+    const textToCopy = "I will use this site only for the necessary time.";
     
     // テキスト入力エリアラベル
     const textBoxLabel = document.createElement('p');
@@ -187,6 +187,23 @@
     textBox.style.marginBottom = '24px';
     textBox.style.boxSizing = 'border-box';
     textBox.placeholder = 'ここに上記の文章を入力してください';
+
+    // コピーペースト無効化
+    textBox.addEventListener('paste', (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    textBox.addEventListener('copy', (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    textBox.addEventListener('cut', (e) => {
+      e.preventDefault();
+      return false;
+    });
+
   
     // テキストがリアルタイムで一致するか確認
     textBox.addEventListener('input', () => {
