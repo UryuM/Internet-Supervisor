@@ -208,11 +208,11 @@
     // テキストがリアルタイムで一致するか確認
     textBox.addEventListener('input', () => {
       if (textBox.value === textToCopy) {
-        textBox.style.borderColor = '#34a853';
-        textBox.style.backgroundColor = '#f0f9f0';
+        textBox.style.borderColor = '#34a853 !important';
+        textBox.style.backgroundColor = '#f0f9f0 !important';
       } else {
-        textBox.style.borderColor = '#dadce0';
-        textBox.style.backgroundColor = 'white';
+        textBox.style.borderColor = '#dadce0 !important';
+        textBox.style.backgroundColor = 'white !important';
       }
     });
   
