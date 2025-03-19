@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* ここにスタイルを記述 */
+    .overlay-container {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      padding: 32px;
+      width: 500px;
+      max-width: 90%;
+      text-align: center;
+    }
+    
+    /* ダークモード用スタイル */
+    .dark-mode .overlay-container {
+      background-color: #303134;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* 他のスタイルも同様に... */
+  </style>
+</head>
+<body>
+  <div id="overlay-template" style="display: none;">
+    <div class="overlay-container">
+      <h2 class="overlay-header">サイトアクセスの制限</h2>
+      <p class="overlay-text">このサイトへのアクセスを制限中です。以下の手順でアクセスを一時的に許可します：</p>
+      
+      <ol class="overlay-steps">
+        <li>アクセス許可時間を選択してください</li>
+        <li>下の文章を正確に入力してください</li>
+        <li>「アクセスを許可」ボタンをクリックしてください</li>
+      </ol>
+      
+      <div class="time-buttons">
+        <!-- 時間ボタンはJSで動的に追加 -->
+      </div>
+      
+      <p class="text-label">以下の文章を書き写してください：</p>
+      <p class="text-to-type">「I will use this site only for the necessary time.」</p>
+      
+      <input type="text" class="text-input" placeholder="ここに上記の文章を入力してください">
+      
+      <button class="allow-button">アクセスを許可</button>
+      
+      <!-- メッセージ表示用の場所 -->
+      <div class="message-container"></div>
+    </div>
+  </div>
+</body>
+</html>
