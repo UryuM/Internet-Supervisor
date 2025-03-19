@@ -15,6 +15,13 @@
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.16);
     --border-radius: 8px;
+    --dark-bg: #202124;
+    --dark-card-bg: #303134;
+    --dark-text: #e8eaed;
+    --dark-text-secondary: #9aa0a6;
+    --dark-border: #5f6368;
+    --dark-input-bg: #252629;
+    --dark-hover: #3c4043;
   }
   
   * {
@@ -278,3 +285,112 @@
       padding: 20px;
     }
   }
+
+  /* ダークモード検出とスタイル適用 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  
+  .card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow);
+  }
+  
+  .card-header {
+    border-bottom: 1px solid var(--dark-border);
+  }
+  
+  .card-header h2 {
+    color: var(--dark-text);
+  }
+  
+  .card-header p {
+    color: var(--dark-text-secondary);
+  }
+  
+  .input-field {
+    background-color: var(--dark-input-bg);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+  }
+  
+  .input-field:focus {
+    border-color: var(--primary-color);
+  }
+  
+  .domain-list li {
+    background-color: var(--dark-hover);
+  }
+  
+  .domain-list li:hover {
+    background-color: #36373a;
+  }
+  
+  .empty-message {
+    color: var(--dark-text-secondary);
+  }
+  
+  .btn-danger {
+    background-color: var(--dark-card-bg);
+  }
+  
+  .info-box {
+    background-color: #1a3c5a;
+  }
+  
+  .info-box p {
+    color: var(--dark-text);
+  }
+  
+  footer {
+    color: var(--dark-text-secondary);
+  }
+}
+
+/* ブロックオーバーレイのダークモード対応 */
+/* content-script.js 内で使用するスタイル */
+.block-overlay-dark {
+  background-color: rgba(32, 33, 36, 0.97) !important;
+  color: #e8eaed !important;
+}
+
+.block-overlay-dark .overlay-container {
+  background-color: #303134 !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
+}
+
+.block-overlay-dark .overlay-header {
+  color: #8ab4f8 !important;
+}
+
+.block-overlay-dark .overlay-text {
+  color: #e8eaed !important;
+}
+
+.block-overlay-dark .overlay-secondary-text {
+  color: #9aa0a6 !important;
+}
+
+.block-overlay-dark .overlay-input {
+  background-color: #252629 !important;
+  border-color: #5f6368 !important;
+  color: #e8eaed !important;
+}
+
+.block-overlay-dark .overlay-input-sample {
+  background-color: #303134 !important;
+  border: 1px solid #5f6368 !important;
+}
+
+.block-overlay-dark .overlay-time-button {
+  background-color: #303134 !important;
+  border-color: #5f6368 !important;
+  color: #8ab4f8 !important;
+}
+
+.block-overlay-dark .overlay-time-button-selected {
+  background-color: #8ab4f8 !important;
+  color: #202124 !important;
+}
